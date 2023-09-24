@@ -18,7 +18,7 @@ else
 zip: zip-setup
 	+cd $(BUILD_WORK)/zip && $(MAKE) -f unix/Makefile install \
 		prefix=$(BUILD_STAGE)/zip/$(MEMO_PREFIX)$(MEMO_SUB_PREFIX) \
-		CC=$(CC) \
+		CC=$(CC) $(BUILD_BASE)/$(MEMO_PREFIX)$(MEMO_SUB_PREFIX)/lib/libiosexec.tbd \
 		CPP="$(CXX)" \
 		CFLAGS="$(CFLAGS) -I. -DUNIX -DBZIP2_SUPPORT" \
 		LFLAGS2="-lbz2 $(CFLAGS)" \
