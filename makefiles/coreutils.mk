@@ -3,7 +3,7 @@ $(error Use the main Makefile)
 endif
 
 STRAPPROJECTS       += coreutils
-COREUTILS_VERSION   := 9.4
+COREUTILS_VERSION   := 9.5
 GETENTDARWIN_COMMIT := 1ad0e39ee51181ea6c13b3d1d4e9c6005ee35b5e
 DEB_COREUTILS_V     ?= $(COREUTILS_VERSION)
 
@@ -73,11 +73,6 @@ endif
 
 	# coreutils.mk Sign
 	$(call SIGN,coreutils,general.xml)
-ifeq (,$(findstring darwin,$(MEMO_TARGET)))
-	$(LDID) -S$(BUILD_MISC)/entitlements/dd.xml $(BUILD_DIST)/coreutils/$(MEMO_PREFIX)$(MEMO_SUB_PREFIX)/bin/dd # Do a manual sign for dd and cat.
-	$(LDID) -S$(BUILD_MISC)/entitlements/dd.xml $(BUILD_DIST)/coreutils/$(MEMO_PREFIX)$(MEMO_SUB_PREFIX)/bin/cat
-	find $(BUILD_DIST)/coreutils -name '.ldid*' -type f -delete
-endif
 
 	# coreutils.mk Make .debs
 	$(call PACK,coreutils,DEB_COREUTILS_V)
