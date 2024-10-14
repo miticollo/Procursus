@@ -3,7 +3,7 @@ $(error Use the main Makefile)
 endif
 
 STRAPPROJECTS   += openssl
-OPENSSL_VERSION := 3.2.2
+OPENSSL_VERSION := 3.2.3
 DEB_OPENSSL_V   ?= $(OPENSSL_VERSION)
 
 openssl-setup: setup
