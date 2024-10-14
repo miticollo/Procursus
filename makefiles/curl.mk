@@ -3,7 +3,7 @@ $(error Use the main Makefile)
 endif
 
 SUBPROJECTS  += curl
-CURL_VERSION := 8.8.0
+CURL_VERSION := 8.10.1
 DEB_CURL_V   ?= $(CURL_VERSION)
 
 curl-setup: setup
@@ -30,6 +30,7 @@ curl: curl-setup gettext openssl libc-ares libssh2 nghttp2 libidn2 brotli zstd r
 		--enable-ares \
 		--without-nghttp3 \
 		--without-ngtcp2 \
+		--without-libpsl \
 		--with-ca-bundle=$(MEMO_PREFIX)/etc/ssl/certs/cacert.pem
 	# Enable HTTP/3 when OpenSSL gains QUIC support
 	+$(MAKE) -C $(BUILD_WORK)/curl
