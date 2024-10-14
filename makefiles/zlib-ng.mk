@@ -3,7 +3,7 @@ $(error Use the main Makefile)
 endif
 
 STRAPPROJECTS    += zlib-ng
-ZLIB-NG_VERSION  := 2.1.7
+ZLIB-NG_VERSION  := 2.1.8
 DEB_ZLIB-NG_V    ?= $(ZLIB-NG_VERSION)
 
 zlib-ng-setup: setup
