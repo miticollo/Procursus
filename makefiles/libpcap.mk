@@ -3,7 +3,7 @@ $(error Use the main Makefile)
 endif
 
 SUBPROJECTS     += libpcap
-LIBPCAP_VERSION := 1.10.4
+LIBPCAP_VERSION := 1.10.5
 DEB_LIBPCAP_V   ?= $(LIBPCAP_VERSION)
 
 libpcap-setup: setup
